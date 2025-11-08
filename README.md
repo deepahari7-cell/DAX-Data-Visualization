@@ -1,15 +1,15 @@
 # DAX-Data-Visualization
 E-Commerce Sales Analysis — Power BI Project
-📘 Overview
+Overview
 
 This project focuses on analyzing e-commerce sales data using Power BI.
 You will explore sales trends, profitability, and target achievement by applying Data Modeling, DAX (Data Analysis Expressions), and interactive visualizations.
 
-🎯 Objective
+ Objective
 
 To transform and analyze sales data from multiple sources, calculate key business metrics, and build insightful dashboards that reveal trends and performance across categories, time, and regions.
 
-📂 Dataset Files
+ Dataset Files
 
 You will work with the following CSV files:
 
@@ -19,7 +19,7 @@ Order Details.csv — Includes product-level details such as Category, Sub-Categ
 
 Sales Target.csv — Contains monthly and category-wise sales targets.
 
-🧩 1. Data Modeling
+ 1. Data Modeling
 
 Before visualization, data modeling must be completed to ensure relational integrity and accurate calculations.
 
@@ -37,20 +37,20 @@ Ensure all relationships are active and in the correct cardinality (typically on
 
 Confirm data types for numeric, date, and text fields.
 
-🧮 2. Calculated Columns (Using DAX)
-🧱 a) Category Type
+ 2. Calculated Columns (Using DAX)
+ a) Category Type
 
 Create a new column in the Order Details table that combines Category and Sub-Category:
 
 Category Type = [Category] & " - " & [Sub-Category]
 
-💰 b) Revenue per Order
+b) Revenue per Order
 
 Compute revenue per order as the product of Amount and Quantity:
 
 Revenue per Order = [Amount] * [Quantity]
 
-📊 c) Sales Category
+c) Sales Category
 
 Categorize each order based on whether its Amount is above or below the average:
 
@@ -61,14 +61,14 @@ IF([Amount] > AVERAGE('Order Details'[Amount]), "Above Average", "Below Average"
 Outcome:
 Enhanced data granularity for analyzing performance by category, order, and sales strength.
 
-📏 3. Calculated Measures (Using DAX)
-🔢 a) Order Count
+ 3. Calculated Measures (Using DAX)
+ a) Order Count
 
 Measure the total number of orders:
 
 Order Count = DISTINCTCOUNT('Order Details'[Order ID])
 
-🏙️ b) Average Profit in Delhi
+ b) Average Profit in Delhi
 
 Calculate the average profit for orders placed in Delhi:
 
@@ -78,7 +78,7 @@ CALCULATE(
     'List of Orders'[City] = "Delhi"
 )
 
-📅 c) Year-to-Date (YTD) Sales
+c) Year-to-Date (YTD) Sales
 
 Compute the cumulative sales from the start of the year to the current order date:
 
@@ -92,8 +92,8 @@ TOTALYTD(
 Outcome:
 Key KPIs ready for use in visual dashboards to monitor sales and profitability performance.
 
-📊 4. Data Visualization
-🎯 a) Sales Target Achievement by Category
+4. Data Visualization
+a) Sales Target Achievement by Category
 
 Chart Type: Clustered Column Chart
 
@@ -107,7 +107,7 @@ Target → Sales Target
 
 Insight: Compare actual vs. target sales by category.
 
-💹 b) Max Profit Margin by Sub-Category
+ b) Max Profit Margin by Sub-Category
 
 Chart Type: Donut Chart
 
@@ -119,7 +119,7 @@ Values → Max(Profit Margin)
 
 Insight: Identify the sub-categories with the highest profit margins.
 
-📈 c) Monthly Sales Trend
+ c) Monthly Sales Trend
 
 Chart Type: Line Chart
 
@@ -131,7 +131,7 @@ Y-Axis → Total Sales (Amount)
 
 Insight: Analyze month-over-month sales performance.
 
-⚖️ d) Profit vs. Quantity Comparison
+ d) Profit vs. Quantity Comparison
 
 Chart Type: Scatter Chart
 
@@ -145,7 +145,7 @@ Details → Sub-Category
 
 Insight: Identify which sub-categories generate high profits relative to quantity sold.
 
-💳 e) Sales vs. Target Cards
+ e) Sales vs. Target Cards
 
 Visuals:
 
@@ -157,7 +157,7 @@ Multi-row Card: Minimum Target by Segment
 
 Insight: Quickly compare current performance to assigned targets.
 
-📊 f) Sales Performance Matrix
+ f) Sales Performance Matrix
 
 Chart Type: Matrix
 
@@ -171,7 +171,7 @@ Values → Actual Sales and Sales Target
 
 Insight: Monitor how sales vary across categories and time periods compared to targets.
 
-🗺️ g) Geographic Sales Analysis
+g) Geographic Sales Analysis
 
 Chart Type: Map
 
@@ -183,7 +183,7 @@ Values → Total Sales Amount
 
 Insight: Visualize regional sales performance and identify top-performing cities.
 
-🌳 h) Sales Distribution by Sub-Category
+ h) Sales Distribution by Sub-Category
 
 Chart Type: Treemap
 
@@ -195,7 +195,7 @@ Values → Total Sales Amount
 
 Insight: Understand the proportional contribution of each sub-category to total sales.
 
-🔻 i) Order Count Analysis by State
+ i) Order Count Analysis by State
 
 Chart Type: Funnel Chart
 
